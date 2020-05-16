@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+Document Object Model (an API) defines the structure (logical) of an HTML document and the way it is accessed and manipulated.
+
 2. What is an event?
+
+An event is anything that happens to an element when the user or the browser interacts with it.
 
 3. What is an event listener?
 
+Event listeners (functions) are the way we have to wait for certain interactions to occur to an object and react to that interaction in the way we need. 
+
 4. Why would we convert a NodeList into an Array?
 
+We would convert a NodeList into an array if we want or need to use array methods in that list of objects since for example map() or filter() are not implemented for NodeList.
+
 5. What is a component?
+
+A component is a piece of code that can be reusable. Usually, pages are separated into components to synthesize the workflow, instead of code 50 differents menu links yo can code just 1 and reuse it for all those 50 links with iterators.
 
 ### Git Set up
 

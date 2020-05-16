@@ -16,7 +16,20 @@ axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
         const topic = document.createElement('div')
         topic.classList.add('tab')
         topic.textContent = el
+        topic.addEventListener('click', () => {
+            document.querySelectorAll('.card').forEach((el) => {
+                el.style.display = 'none'
+            })
+            let dataSection = el
+            if( el == "node.js") {
+                dataSection = "node"
+            }
+            document.querySelectorAll(`.card[data-section="${dataSection}"]`).forEach((el) => {
+                el.style.display = "flex"
+            })
+        })
         topicsElement.appendChild(topic)
+        
     })
     
 })

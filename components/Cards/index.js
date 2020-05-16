@@ -23,9 +23,11 @@ const cardsContainerElement = document.querySelector('div.cards-container')
 axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
 .then((response) => {
     for (const articleSection in response.data.articles) {
+        console.log(articleSection);
+        
         if (response.data.articles.hasOwnProperty(articleSection)) {
             response.data.articles[articleSection].forEach(el => {
-                cardsContainerElement.appendChild(cardMaker(el))
+                cardsContainerElement.appendChild(cardMaker(el, articleSection))
             })
             
         }
@@ -34,8 +36,9 @@ axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
 })
 
 
-const cardMaker = (cardData) => {
+const cardMaker = (cardData, section) => {
     const card = document.createElement('div')
+    card.setAttribute('data-section', section)
     card.classList.add('card')
 
     const headline = document.createElement('div')

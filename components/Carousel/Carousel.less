@@ -36,6 +36,17 @@
   }
   img {
     .width-100();
-    display: none;
+    display: block;
+    z-index: -2;
+    position: absolute;
+    transition: all .3s ease-in-out;
+    left: 0;
+    opacity: 0;
+
+    &.shown {
+      opacity: 1;
+      z-index: -1;
+    }
+
   }
 }

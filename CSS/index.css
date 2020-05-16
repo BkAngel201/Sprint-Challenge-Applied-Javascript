@@ -301,5 +301,14 @@ body {
 }
 .carousel img {
   width: 100%;
-  display: none;
+  display: block;
+  z-index: -2;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+  left: 0;
+  opacity: 0;
+}
+.carousel img.shown {
+  opacity: 1;
+  z-index: -1;
 }
